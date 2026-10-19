@@ -25,6 +25,10 @@ If I were presenting this to a retail manager, I'd recommend reviewing **sales a
 
 I'd follow any proposed action with KPIs such as **gross margin, repeat purchases and sales growth by segment**, rather than claiming an improvement from the dashboard alone.
 
+## Reproduce the profitability analysis
+
+I added a [Python analysis script](python/analyze_superstore.py) and [methodology notes](docs/PROFITABILITY_ANALYSIS.md) to compare sales, profit and discount bands using the Excel workbook. The script needs to be run and checked before presenting its output as verified findings.
+
 ## Project files
 
 | File | What's inside |
