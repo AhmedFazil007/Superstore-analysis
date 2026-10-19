@@ -2,7 +2,7 @@
 
 **Excel · Power BI · Sales reporting**
 
-I used a Superstore sales dataset to look beyond total sales and ask a more useful question: **Which parts of the business are contributing to performance, and where should a manager investigate further?**
+I started with a Superstore dataset and a question that matters more than the sales total: **Which parts of the business are contributing to performance, and where should a manager investigate further?**
 
 The goal was to bring sales trends, product categories and regional comparisons into one place, so it's easier to spot differences that might get lost in a spreadsheet.
 
@@ -27,7 +27,7 @@ I'd follow any proposed action with KPIs such as **gross margin, repeat purchase
 
 ## Reproduce the profitability analysis
 
-I added a [Python analysis script](python/analyze_superstore.py) and [methodology notes](docs/PROFITABILITY_ANALYSIS.md) to compare sales, profit and discount bands using the Excel workbook. The script needs to be run and checked before presenting its output as verified findings.
+The repository includes a [Python analysis script](python/analyze_superstore.py) and [methodology notes](docs/PROFITABILITY_ANALYSIS.md) to compare sales, profit and discount bands using the Excel workbook. The script needs to be run and checked before presenting its output as verified findings.
 
 ## Project files
 
