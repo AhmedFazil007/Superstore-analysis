@@ -1,46 +1,52 @@
-# Superstore Sales Analysis
+# Superstore Sales & Profit Analysis
 
-**Excel · Power BI · Sales reporting**
+**Excel · Power BI · Sales and profitability reporting**
 
-I started with a Superstore dataset and a question that matters more than the sales total: **Which parts of the business are contributing to performance, and where should a manager investigate further?**
+I used a Superstore dataset to explore a question I kept coming back to: **does a region or category that sells more necessarily contribute more profit?**
 
-The goal was to bring sales trends, product categories and regional comparisons into one place, so it's easier to spot differences that might get lost in a spreadsheet.
+I wanted the dashboard to be more than a ranking of top-selling products. My focus was on the relationship between sales, profit, regions and product categories—and what I would check before recommending a business change.
 
 ## Dashboard
 
-![Superstore dashboard](assets/superstore%20dashboard.png)
+![Superstore sales dashboard](assets/superstore%20dashboard.png)
 
-## Questions I explored
+## What I looked for
 
-- Which regions contribute the most sales?
-- How does performance vary across product categories?
-- Are there periods or segments worth investigating more closely?
-- What should a manager look at alongside revenue before making decisions?
+**Sales and profit can tell different stories.** A category may bring in substantial revenue without generating the same share of profit. I would compare both before calling it a strong performer.
 
-The dashboard is a starting point for those conversations. A high-sales category isn't automatically the most profitable, and a lower-performing region isn't automatically an opportunity without understanding costs and demand.
+**Regional totals need context.** If one region sells more than another, that doesn't automatically mean the lower-sales region is underperforming. I'd want to compare its product mix, discounts and profit margin.
 
-## Business takeaway
+**Discounts deserve a closer look.** Promotions may increase sales, but I would check whether discounted orders still contribute enough profit to justify them.
 
-If I were presenting this to a retail manager, I'd recommend reviewing **sales and profit together**, then drilling down by region, category and time. That would help distinguish growth opportunities from areas where revenue looks healthy but profitability needs attention.
+These are the business questions behind the dashboard. I haven't included exact rankings or percentages here because the reproducible profitability summaries still need to be run and checked against the source workbook.
 
-I'd follow any proposed action with KPIs such as **gross margin, repeat purchases and sales growth by segment**, rather than claiming an improvement from the dashboard alone.
+## What I would recommend
 
-## Reproduce the profitability analysis
+I'd start with a **region-by-category sales and profit comparison**, then investigate segments where sales are strong but profit is weak. If discounts appear related to lower margins, I'd test a pricing change on a limited group rather than assume discounts caused the difference.
 
-The repository includes a [Python analysis script](python/analyze_superstore.py) and [methodology notes](docs/PROFITABILITY_ANALYSIS.md) to compare sales, profit and discount bands using the Excel workbook. The script needs to be run and checked before presenting its output as verified findings.
+To judge whether a change helped, I'd track **profit, profit margin and sales**, not revenue alone.
 
-## Project files
+## Files and reproduction
 
-| File | What's inside |
+| File | What it's for |
 |---|---|
-| [Power BI dashboard](powerbi/Superstore.pbix) | Interactive sales report |
-| [Excel workbook](data/Superstore.xlsx) | Source data and analysis |
-| [Dashboard screenshot](assets/superstore%20dashboard.png) | Report preview |
+| [Power BI report](powerbi/Superstore.pbix) | Interactive dashboard |
+| [Excel dataset](data/Superstore.xlsx) | Source workbook |
+| [Dashboard screenshot](assets/superstore%20dashboard.png) | Preview |
+| [Python analysis](python/analyze_superstore.py) | Region, category and discount-band summaries |
+| [Method notes](docs/PROFITABILITY_ANALYSIS.md) | Definitions and caveats |
 
-## Scope
+To generate the Python summaries:
 
-This is a portfolio case study showing how I approach sales analysis and reporting. It doesn't represent a measured improvement at an employer.
+```bash
+pip install pandas openpyxl
+python python/analyze_superstore.py
+```
 
----
+If the data isn't on the first worksheet, the script supports `--sheet "Sheet Name"`. Generated CSVs appear under `analysis/`. I haven't presented their findings as verified until that run is checked.
 
-[Ahmed Fazil](https://github.com/AhmedFazil007)
+## My takeaway
+
+A dashboard can tell me where sales are coming from, but I need profit and cost context before I can suggest where a business should invest. That's the main lesson I wanted this project to show.
+
+*Independent portfolio project. The recommendations are ideas to investigate, not changes implemented for a company.*
